@@ -60,14 +60,14 @@ export default function Login(){
                 const tokenUsuario = res.data.tokenUsuario
 
                 //Guardamos token en el localstorage.
-                localStorage.setItem('token', tokenUsuario)
+                sessionStorage.setItem('token', tokenUsuario)
 
                 navigate('/listado')
             })
 
     }
 
-    let token = localStorage.getItem('token')
+    let token = sessionStorage.getItem('token')
 
     return(
         <>

@@ -18,3 +18,17 @@
 .login{
     height: 83vh;
 }
+
+.favoriteBtn{
+    width: 30px;
+    height: 30px;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    border-radius: 30px;
+    background-color: #f2f2f2;
+}
