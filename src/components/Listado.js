@@ -24,7 +24,7 @@ export default function Listado(props){
 
     }, [movieList] )
 
-
+    // props.addOrRemoveFromFavs()
     return(
         <div className='container' >
 
@@ -41,12 +41,14 @@ export default function Listado(props){
                 movieList.map( (movie, idx) => {
                     return(
 
-                        <div key={idx} id={movie.id}>
+                        <div key={idx}>
                             <div>
 
                                 <div className="card">
                                     <img src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`} className="card-img-top" alt="movie" />
-                                    <button className='favoriteBtn' onClick={props.addOrRemoveFromFavs}>❤️</button>
+                                    <button className='favoriteBtn' onClick={props.addOrRemoveFromFavs} data-movie-id={movie.id}>
+                                        ♡
+                                    </button>
                                     <div className="card-body">
                                         <h5 className="card-title">{movie.original_title}</h5>
                                         <p className="card-text">{movie.overview.substring(0, 50)}...</p>
