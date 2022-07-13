@@ -4,7 +4,7 @@ import axios from "axios"
 import sweetAlert from '@sweetalert/with-react'
 
 
-export default function Results(){
+export default function Results(props){
 
     let  query= new URLSearchParams(window.location.search)
 
@@ -58,13 +58,17 @@ export default function Results(){
 
                     {movieResults.map( (movie, idx) => {
                         return(
-                            <div key={idx} id={movie.id}>
+                            <div key={idx}>
                                 <div>
     
                                     <div className="card">
                                         <img src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} className="card-img-top" alt="movie" />
+                                        <button className='favoriteBtn' onClick={props.addOrRemoveFromFavs} data-movie-id={movie.id}>
+                                            ♡
+                                        </button>
                                         <div className="card-body">
                                             <h5 className="card-title">{movie.original_title}</h5>
+                                            <p className="card-text">{movie.overview.substring(0, 50)}...</p>
                                             <Link to={`/detalle?movieID=${movie.id}`} className="btn btn-primary">View Details</Link>
                                         </div>
                                     </div>
